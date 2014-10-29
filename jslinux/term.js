@@ -41,15 +41,14 @@ Term.prototype.open = function() {
 			da[i] = c;
 		this.lines[y] = da;
 	}
-	document.writeln('<table border="1" cellspacing="1" cellpadding="1">');
+	document.writeln('<table border="0" cellspacing="0" cellpadding="0">');
 	for (y = 0; y < this.h; y++) {
 		document.writeln('<tr><td class="term" id="tline' + y + '"></td></tr>');
 	}
 	document.writeln('</table>');
 	this.refresh(0, this.h - 1);
 	document.addEventListener("keydown", this.keyDownHandler.bind(this), true);
-	document
-			.addEventListener("keypress", this.keyPressHandler.bind(this), true);
+	document.addEventListener("keypress", this.keyPressHandler.bind(this), true);
 	ea = this;
 	setInterval(function() {
 		ea.cursor_timer_cb();
